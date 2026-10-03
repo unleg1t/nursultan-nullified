@@ -88,6 +88,11 @@ for junk in ("jre/src.zip", "jre/jmods"):
         shutil.rmtree(p)
     elif os.path.exists(p):
         os.remove(p)
+# zip extraction drops the exec bit; java.exe must be runnable by path
+for name in os.listdir(os.path.join("jre", "bin")):
+    p = os.path.join("jre", "bin", name)
+    if os.path.isfile(p):
+        os.chmod(p, os.stat(p).st_mode | 0o111)
 print("    jre ready")
 PY
 fi

@@ -20,7 +20,7 @@ fi
 
 if [ -n "${JAVA_WIN:-}" ]; then
   JAVA="$JAVA_WIN"
-elif [ -x "./jre/bin/java.exe" ]; then
+elif [ -f "./jre/bin/java.exe" ]; then
   JAVA="$(pwd)/jre/bin/java.exe"
 else
   JAVA="java.exe"
