@@ -1,0 +1,16 @@
+# downloaded runtime / generated files
+libraries/
+jre/
+client/
+
+# runtime output
+logs/
+files/
+crash-reports/
+hs_err_pid*.log
+*.log
+
+# os cruft
+.DS_Store
+Thumbs.db
+*.tmp
